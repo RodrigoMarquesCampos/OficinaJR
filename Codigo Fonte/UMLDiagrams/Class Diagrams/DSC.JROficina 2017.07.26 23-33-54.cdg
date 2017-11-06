@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DSC.JROficina">
+  <ClassDiagramComponents>
+    <Class name="ClienteDAO" package="DSC.JROficina.Persistencia" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getConsultaInsert" returnType="String" visibility="protected"/>
+        <Method name="getConsultaUpdate" returnType="String" visibility="protected"/>
+        <Method name="getConsultaDelete" returnType="String" visibility="protected"/>
+        <Method name="getConsultaAbrir" returnType="String" visibility="protected"/>
+        <Method name="getConsultaBuscar" returnType="String" visibility="protected"/>
+        <Method name="setBuscaFiltros" returnType="void" visibility="protected">
+          <Argument type="Cliente" name="filtro"/>
+        </Method>
+        <Method name="setParametros" returnType="void" visibility="protected">
+          <Argument type="PreparedStatement" name="sql"/>
+          <Argument type="Cliente" name="obj"/>
+        </Method>
+        <Method name="setDados" returnType="Cliente" visibility="protected">
+          <Argument type="ResultSet" name="resultado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DAOGenerico" package="DSC.JROficina.Persistencia" visibility="public" isAbstract="true" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="conexao" type="Connection" visibility="private"/>
+        <Field name="where" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getConsultaInsert" returnType="String" visibility="protected" isAbstract="true"/>
+        <Method name="getConsultaUpdate" returnType="String" visibility="protected" isAbstract="true"/>
+        <Method name="getConsultaDelete" returnType="String" visibility="protected" isAbstract="true"/>
+        <Method name="getConsultaAbrir" returnType="String" visibility="protected" isAbstract="true"/>
+        <Method name="getConsultaBuscar" returnType="String" visibility="protected" isAbstract="true"/>
+        <Method name="setBuscaFiltros" returnType="void" visibility="protected" isAbstract="true">
+          <Argument type="T" name="filtro"/>
+        </Method>
+        <Method name="setParametros" returnType="void" visibility="protected" isAbstract="true">
+          <Argument type="PreparedStatement" name="sql"/>
+          <Argument type="T" name="obj"/>
+        </Method>
+        <Method name="setDados" returnType="T" visibility="protected" isAbstract="true">
+          <Argument type="ResultSet" name="resultado"/>
+        </Method>
+        <Method name="Salvar" returnType="boolean" visibility="public">
+          <Argument type="T" name="obj"/>
+        </Method>
+        <Method name="Apagar" returnType="boolean" visibility="public">
+          <Argument type="T" name="obj"/>
+        </Method>
+        <Method name="Abrir" returnType="T" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="adicionaFiltro" returnType="DAOGenerico&lt;T&gt;" visibility="protected">
+          <Argument type="String" name="campo"/>
+          <Argument type="int" name="valor"/>
+        </Method>
+        <Method name="adicionaFiltro" returnType="DAOGenerico&lt;T&gt;" visibility="protected">
+          <Argument type="String" name="campo"/>
+          <Argument type="String" name="valor"/>
+        </Method>
+        <Method name="adicionarFiltro" returnType="DAOGenerico&lt;T&gt;" visibility="protected">
+          <Argument type="String" name="campo"/>
+          <Argument type="TipoCliente" name="valor"/>
+        </Method>
+        <Method name="Buscar" returnType="List&lt;T&gt;" visibility="public">
+          <Argument type="T" name="filtro"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FornecedorDAO" package="DSC.JROficina.Persistencia" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getConsultaInsert" returnType="String" visibility="protected"/>
+        <Method name="getConsultaUpdate" returnType="String" visibility="protected"/>
+        <Method name="getConsultaDelete" returnType="String" visibility="protected"/>
+        <Method name="getConsultaAbrir" returnType="String" visibility="protected"/>
+        <Method name="getConsultaBuscar" returnType="String" visibility="protected"/>
+        <Method name="setBuscaFiltros" returnType="void" visibility="protected">
+          <Argument type="Fornecedor" name="filtro"/>
+        </Method>
+        <Method name="setParametros" returnType="void" visibility="protected">
+          <Argument type="PreparedStatement" name="sql"/>
+          <Argument type="Fornecedor" name="obj"/>
+        </Method>
+        <Method name="setDados" returnType="Fornecedor" visibility="protected">
+          <Argument type="ResultSet" name="resultado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UsuarioDAO" package="DSC.JROficina.Persistencia" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getConsultaInsert" returnType="String" visibility="protected"/>
+        <Method name="getConsultaUpdate" returnType="String" visibility="protected"/>
+        <Method name="getConsultaDelete" returnType="String" visibility="protected"/>
+        <Method name="getConsultaAbrir" returnType="String" visibility="protected"/>
+        <Method name="getConsultaBuscar" returnType="String" visibility="protected"/>
+        <Method name="setBuscaFiltros" returnType="void" visibility="protected">
+          <Argument type="Usuario" name="filtro"/>
+        </Method>
+        <Method name="setParametros" returnType="void" visibility="protected">
+          <Argument type="PreparedStatement" name="sql"/>
+          <Argument type="Usuario" name="obj"/>
+        </Method>
+        <Method name="setDados" returnType="Usuario" visibility="protected">
+          <Argument type="ResultSet" name="resultado"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="DSC.JROficina.Persistencia.UsuarioDAO" target="DSC.JROficina.Persistencia.DAOGenerico"/>
+    <IsRelation name="is" source="DSC.JROficina.Persistencia.FornecedorDAO" target="DSC.JROficina.Persistencia.DAOGenerico"/>
+    <UseRelation source="DSC.JROficina.Persistencia.DAOGenerico" target="DSC.JROficina.Persistencia.DAOGenerico" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="DSC.JROficina.Persistencia.ClienteDAO" target="DSC.JROficina.Persistencia.DAOGenerico"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

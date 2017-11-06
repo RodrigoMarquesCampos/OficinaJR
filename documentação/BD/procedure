@@ -1,0 +1,196 @@
+delimiter //
+
+create procedure inserir_cliente(nomee varchar(40), telefonee varchar(12), enderecoo varchar(50), cpff varchar(12), tipoo varchar(10))
+begin	
+	declare x integer; 
+
+	insert into pessoas (nome, telefone, endereco) values (nomee, telefonee, enderecoo);
+	select max(idpessoa_pk) into x from pessoas;
+	insert into clientes (idpessoa_fk, cpf, tipo) values (x, cpff, tipoo);
+end //
+
+
+
+create procedure update_cliente(nomee varchar(40), telefonee varchar(12), enderecoo varchar(50), cpff varchar(12), tipoo varchar(10), id integer)
+begin
+	update pessoas set nome = nomee, telefone = telefonee, endereco = enderecoo where idpessoa_pk = id;
+	update clientes set cpf = cpff, tipo = tipoo where idpessoa_fk = id;
+
+end //
+
+create procedure apaga_cliente(id integer)
+begin
+	delete from clientes where idpessoa_fk  = id;
+	delete from pessoas where idpessoa_pk = id;
+end //	
+
+
+create procedure inserir_fornecedor(nomee varchar(40), telefonee varchar(12), enderecoo varchar(50), cnpjj varchar(14))
+begin
+	declare x integer;
+
+	insert into pessoas (nome, telefone, endereco) values (nomee, telefonee, enderecoo);
+	select max(idpessoa_pk) into x from pessoas;
+	insert into fornecedor(idpessoa_fk, cnpj) values(x, cnpjj);
+end //	
+
+
+
+create procedure update_fornecedor(nomee varchar(40), telefonee varchar(12), enderecoo varchar(50), cnpjj varchar(12), id integer)
+begin
+	update pessoas set nome = nomee, telefone = telefonee, endereco = enderecoo where idpessoa_pk = id;
+	update fornecedor set cnpj = cnpjj where idpessoa_fk = id;
+
+end //
+
+
+
+create procedure apaga_fornecedor(id integer)
+begin
+	delete from fornecedor where idpessoa_fk  = id;
+	delete from pessoas where idpessoa_pk = id;
+end //
+
+	
+
+create procedure inserirUsuario(nomee varchar(40), loginn varchar(15), senhaa varchar(20), tipoo integer)
+	begin
+	declare x integer;
+
+	insert into pessoas(nome) values (nomee);
+	select max(idpessoa_pk) into x from pessoas;
+	insert into usuario(idpessoa_fk, login, senha, tipo) values (x, loginn, senhaa, tipoo);
+end //
+
+
+create procedure updateUsuario(nomee varchar(40), loginn varchar(15), senhaa varchar(20), tipoo integer, id integer)
+begin
+
+	update pessoas set nome = nomee where idpessoa_pk = id;
+	update usuario set login = loginn, senha = senhaa, tipo = tipoo where idpessoa_fk = id;	
+	
+end //
+
+
+
+create procedure apagaUsuario(id integer)
+begin 
+	delete from usuario where idpessoa_fk = id;
+	delete from pessoas where idpessoa_pk = id;
+end //	
+
+
+
+
+create procedure inserirPeca(nomee varchar(50), marcaa varchar(30), valor_compraa float, valor_vendaa float, motoo varchar(50), quantidade integer, fornecedorr varchar(50))
+begin 
+declare x integer;
+declare y integer;
+
+	if(select fornecedor.idpessoa_fk from fornecedor join pessoas on fornecedor.idpessoa_fk = pessoas.idpessoa_pk where pessoas.nome = fornecedorr > 0) then
+		insert into itemfinanceiro(valorunitario) values(valor_vendaa);
+		select max(iditem_pk) into x from itemfinanceiro;
+		insert into pecas(iditem_fk, nome, marca, valor_compra, moto) values(x, nomee, marcaa, valor_compraa, motoo);
+		select fornecedor.idpessoa_fk into y from fornecedor join pessoas on fornecedor.idpessoa_fk = pessoas.idpessoa_pk where pessoas.nome = fornecedorr;	
+		insert into peca_tem_fornecedor(fornecedor_fk, peca_fk, qtde) values(y, x, quantidade);	
+	else
+		rollback;
+	end if;
+
+end //
+
+
+
+
+create procedure updatePeca(nomee varchar(50), marcaa varchar(30), valor_compraa float, valor_vendaa float, motoo varchar(50), qtdee integer, fornecedorr varchar(50),id integer)
+begin
+declare x integer;
+
+	update itemfinanceiro set valorunitario = valor_vendaa where iditem_pk = id;
+	update pecas set nome = nomee, marca = marcaa, valor_compra = valor_compraa, moto = motoo where iditem_fk = id;	
+	select fornecedor.idpessoa_fk into x from fornecedor join pessoas on fornecedor.idpessoa_fk = pessoas.idpessoa_pk where pessoas.nome = fornecedorr;  
+	update peca_tem_fornecedor set fornecedor_fk = x, qtde = qtdee  where peca_fk = id;
+	
+end //
+
+
+
+create procedure apagaPeca(id integer)
+begin
+	delete from peca_tem_fornecedor where peca_fk = id;
+	delete from pecas where iditem_fk = id;
+	delete from itemfinanceiro where iditem_pk = id;
+
+end //	
+
+
+
+create table Peca_tem_fornecedor(
+	fornecedor_fk integer not null,
+	peca_fk integer not null,
+	qtde integer,
+	foreign key(fornecedor_fk) references fornecedor(idpessoa_fk),
+	foreign key(peca_fk) references pecas(iditem_fk));
+
+
+alter table peca_tem_fornecedor add qtde integer;	
+
+
+	select pecas.iditem_fk, pecas.nome, pecas.marca, pecas.moto, pecas.valor_compra, itemfinanceiro.valorunitario, pessoas.nome, pessoas.telefone, pessoas.endereco, fornecedor.cnpj, peca_tem_fornecedor.qtde from itemfinanceiro join pecas on itemfinanceiro.iditem_pk = pecas.iditem_fk join peca_tem_fornecedor on pecas.iditem_fk = peca_tem_fornecedor.peca_fk join pessoas on peca_tem_fornecedor.fornecedor_fk = pessoas.idpessoa_pk join fornecedor on pessoas.idpessoa_pk = fornecedor.idpessoa_fk; 
+
+
+	create table veiculo(
+
+	id integer auto_increment,
+	idpessoa_fk integer,
+	placa varchar(9),
+	marca varchar(20),
+	ano int,
+	modelo varchar(30),
+	primary key(id, placa),
+	foreign key(idpessoa_fk) references clientes(idpessoa_fk)
+	);
+
+
+
+
+//Consulta geral Motos;
+
+	select veiculo.placa, veiculo.marca, veiculo.ano, veiculo.modelo, veiculo.idpessoa_fk, clientes.cpf,"
+        + " clientes.tipo, clientes.idpessoa_fk, pessoas.nome, pessoas.telefone, pessoas.endereco from veiculo"
+        + " join clientes on veiculo.idpessoa_fk = clientes.idpessoa_fk join pessoas on clientes.idpessoa_fk ="
+        + " pessoas.idpessoa_pk";
+
+// Testar se funciona "insert into pessoas(campo), cliente(campos) ..."
+
+create table tran_veiculo(
+	veiculo_fk integer,
+	tran_fk integer,
+	foreign key(veiculo_fk) references veiculo(id),
+	foreign key(tran_fk) references transacaofinanceira(idtran_pk));
+
+
+
+
+create procedure inserirServico(valor float, descricaoo varchar(50))
+begin
+	declare x integer;
+
+	insert into itemfinanceiro (valorunitario) values (valor);
+	select max(iditem_pk) into x from itemfinanceiro;
+	insert into servicos(iditem_fk, descricao) values(x, descricaoo);
+end //
+
+create procedure update_servico(valor float, descricaoo varchar(50), id integer)
+begin
+	update itemfinanceiro set valorunitario = valor where iditem_pk = id;
+	update servicos set descricao = descricaoo where iditem_fk = id;
+
+end //
+
+create procedure delete_servico(id integer)
+begin
+	delete from itemfinanceiro where iditem_pk = id;
+	delete from servicos where iditem_fk = id;
+
+end //

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DSC.JROficina">
+  <ClassDiagramComponents>
+    <Class name="ClienteBuscar" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="btnBuscar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEditar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnNovo" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cbxTipo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblBusca" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtEndereco" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNome" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTelefone" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtcpf_cnpj" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Repositorio&lt;Cliente&gt;" name="repositorio"/>
+          <Argument type="Class" name="tipo_tela"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="txtNomeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtcpf_cnpjActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnNovoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBuscarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEditarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="retornaIdSelecionado" returnType="int" visibility="public"/>
+        <Method name="limpaFiltro" returnType="void" visibility="public"/>
+        <Method name="preencheFiltro" returnType="void" visibility="public"/>
+        <Method name="preencheTabela" returnType="void" visibility="public">
+          <Argument type="List&lt;Cliente&gt;" name="listagem"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ClienteEditar" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="btnApagar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnCancelar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalvar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cbxTipoCliente" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtCpf_cnpj" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtEnd" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNome" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTel" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="btnSalvarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnCancelarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnApagarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="carregaCampos" returnType="void" visibility="public"/>
+        <Method name="carregaObjeto" returnType="void" visibility="public"/>
+        <Method name="verificarCamposObrigatorios" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FornecedorBuscar" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="btnBuscar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEditar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnNovo" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblBusca" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtCnpj" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtEndereco" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNome" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTelefone" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Repositorio&lt;Fornecedor&gt;" name="repositorio"/>
+          <Argument type="Class" name="tipo_tela"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="txtNomeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtCnpjActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBuscarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnNovoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEditarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="retornaIdSelecionado" returnType="int" visibility="public"/>
+        <Method name="preencheFiltro" returnType="void" visibility="public"/>
+        <Method name="preencheTabela" returnType="void" visibility="public">
+          <Argument type="List&lt;Fornecedor&gt;" name="listagem"/>
+        </Method>
+        <Method name="limpaFiltro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FornecedorEditar" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="bntCancelar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bntSalvar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnApagar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtCnpj" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtEndereco" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNome" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTelefone" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="bntSalvarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bntCancelarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnApagarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="carregaCampos" returnType="void" visibility="public"/>
+        <Method name="carregaObjeto" returnType="void" visibility="public"/>
+        <Method name="verificarCamposObrigatorios" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Repositorio" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="clienteDAO" type="ClienteRepositorio" visibility="package" isStatic="true"/>
+        <Field name="fornecedorDAO" type="FornecedorRepositorio" visibility="package" isStatic="true"/>
+        <Field name="usuarioDAO" type="UsuarioRepositorio" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getClienteRepositorio" returnType="ClienteRepositorio" visibility="public" isStatic="true"/>
+        <Method name="getFornecedorRepositorio" returnType="FornecedorRepositorio" visibility="public" isStatic="true"/>
+        <Method name="getUsuarioRepositorio" returnType="UsuarioRepositorio" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="TelaBusca" package="DSC.JROficina.Apresentacao" visibility="public" isAbstract="true" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="repositorio" type="Repositorio&lt;T&gt;" visibility="package"/>
+        <Field name="filtro" type="T" visibility="package"/>
+        <Field name="tela_edicao" type="TelaEdicao&lt;T&gt;" visibility="package"/>
+        <Field name="tipo_tela" type="Class" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Repositorio&lt;T&gt;" name="repositorio"/>
+          <Argument type="Class" name="tipo_tela"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="retornaIdSelecionado" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="preencheFiltro" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="preencheTabela" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="List&lt;T&gt;" name="listagem"/>
+        </Method>
+        <Method name="limpaFiltro" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="buscar" returnType="void" visibility="public"/>
+        <Method name="novo" returnType="void" visibility="public"/>
+        <Method name="editar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TelaEdicao" package="DSC.JROficina.Apresentacao" visibility="public" isAbstract="true" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="repositorio" type="Repositorio&lt;T&gt;" visibility="package"/>
+        <Field name="entidade" type="T" visibility="package"/>
+        <Field name="busca" type="TelaBusca&lt;T&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getEntidade" returnType="T" visibility="public"/>
+        <Method name="setEntidade" returnType="void" visibility="public">
+          <Argument type="T" name="entidade"/>
+        </Method>
+        <Method name="getRepositorio" returnType="Repositorio&lt;T&gt;" visibility="public"/>
+        <Method name="setRepositorio" returnType="void" visibility="public">
+          <Argument type="Repositorio&lt;T&gt;" name="repositorio"/>
+        </Method>
+        <Method name="getBusca" returnType="TelaBusca&lt;T&gt;" visibility="public"/>
+        <Method name="setBusca" returnType="void" visibility="public">
+          <Argument type="TelaBusca&lt;T&gt;" name="busca"/>
+        </Method>
+        <Method name="carregaCampos" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="carregaObjeto" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="verificarCamposObrigatorios" returnType="boolean" visibility="public" isAbstract="true"/>
+        <Method name="Salvar" returnType="void" visibility="public"/>
+        <Method name="Apagar" returnType="void" visibility="public"/>
+        <Method name="cancelar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TelaPrincipal" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="MnuFornecedores" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenu1" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="mnuCadastro" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="mnuClientes" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="mnuUsuario" type="javax.swing.JMenuItem" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="mnuClientesActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="mnuCadastroActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="MnuFornecedoresActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="mnuUsuarioActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UsuarioBuscar" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="btnBusca" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEditar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnNovo" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblBusca" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtLogin" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNome" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Repositorio&lt;Usuario&gt;" name="repositorio"/>
+          <Argument type="Class" name="tipo_tela"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="btnBuscaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnNovoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEditarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="retornaIdSelecionado" returnType="int" visibility="public"/>
+        <Method name="preencheFiltro" returnType="void" visibility="public"/>
+        <Method name="preencheTabela" returnType="void" visibility="public">
+          <Argument type="List&lt;Usuario&gt;" name="listagem"/>
+        </Method>
+        <Method name="limpaFiltro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="UsuarioEditar" package="DSC.JROficina.Apresentacao" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="btnApagar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnCancelar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalvar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="pwdSenha" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="txtLogin" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNome" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="btnSalvarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnCancelarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnApagarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="carregaCampos" returnType="void" visibility="public"/>
+        <Method name="carregaObjeto" returnType="void" visibility="public"/>
+        <Method name="verificarCamposObrigatorios" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="DSC.JROficina.Apresentacao.FornecedorBuscar" target="DSC.JROficina.Apresentacao.TelaBusca"/>
+    <UseRelation source="DSC.JROficina.Apresentacao.TelaEdicao" target="DSC.JROficina.Apresentacao.Repositorio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="DSC.JROficina.Apresentacao.UsuarioEditar" target="DSC.JROficina.Apresentacao.TelaEdicao"/>
+    <IsRelation name="is" source="DSC.JROficina.Apresentacao.FornecedorEditar" target="DSC.JROficina.Apresentacao.TelaEdicao"/>
+    <IsRelation name="is" source="DSC.JROficina.Apresentacao.ClienteBuscar" target="DSC.JROficina.Apresentacao.TelaBusca"/>
+    <IsRelation name="is" source="DSC.JROficina.Apresentacao.ClienteEditar" target="DSC.JROficina.Apresentacao.TelaEdicao"/>
+    <UseRelation source="DSC.JROficina.Apresentacao.TelaEdicao" target="DSC.JROficina.Apresentacao.TelaBusca" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="DSC.JROficina.Apresentacao.Repositorio" target="DSC.JROficina.Apresentacao.Repositorio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="DSC.JROficina.Apresentacao.UsuarioBuscar" target="DSC.JROficina.Apresentacao.TelaBusca"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
